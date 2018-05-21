@@ -21,8 +21,9 @@ package LamdaExpressions;
  * 
  * lambda expression are more like a method references. Now method can be referenced.
  */
-class LamdaExpression {
-}
+
+
+
 
 class NumericOperationsTest{
 	public static void main(String []args) {
@@ -108,7 +109,30 @@ class GenericTest{
 
 /*
  * Lambda Expressions as arguments
+ * To pass lambda expressions as parameters, just make sure the functional interface type is compatible with the required parameter.
  * 
  */
 
 
+
+class LamdaExpression {
+	public static void main(String []args) {
+		
+		Generic<String>  morningMessage = (String str) -> { 
+																			return "Good Morning " + str + "!" ;
+																		}  ;
+																		
+		Generic<String> eveningMessage = (String str) -> {
+																			return "Good Evening " + str + "!" ;
+																		}	;
+		
+		LamdaReferenceMethod(morningMessage, "NEHA CHOPRA");	
+		LamdaReferenceMethod(eveningMessage, "NEHA CHOPRA");	
+	}
+	
+	public static void LamdaReferenceMethod(Generic<String> generic, String str) {
+		System.out.println(generic.computation(str));
+
+		System.out.println(generic.computation(str));
+	}
+}
