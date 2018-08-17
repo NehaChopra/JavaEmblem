@@ -31,6 +31,7 @@ import java.util.logging.Logger;
 class EventLoggingTask implements Runnable{
 
 	private Logger logger = Logger.getLogger(EventLoggingTask.class.getName());
+	
 	ExecutorService executorService;
 	
 	@Override
