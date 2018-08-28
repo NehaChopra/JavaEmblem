@@ -1,3 +1,4 @@
+package javathreadjoinwaitnotify;
 import java.util.logging.Logger;
 
 //https://www.baeldung.com/java-thread-join

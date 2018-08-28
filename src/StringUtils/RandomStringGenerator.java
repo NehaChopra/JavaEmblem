@@ -18,3 +18,4 @@ public class RandomStringGenerator {
 		return randomString.toString();
 	}
 }
+
