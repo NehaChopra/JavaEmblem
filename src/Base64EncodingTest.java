@@ -1,5 +1,4 @@
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 import sun.misc.BASE64Decoder;
