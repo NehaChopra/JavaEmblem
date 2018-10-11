@@ -1,8 +1,11 @@
 package Java8Features.Java8DateTimeAPI;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 public class LocalExample {
 
@@ -31,12 +34,24 @@ public class LocalExample {
 		System.out.println("Next date in respective to Current local date: " + todayDate.plusDays(1));
 		//Next date in respective to Current local date: 2018-10-12
 	
+		/*
+		 * enum ChronoUnit implements TemporalUnit
+		 */
+		LocalDate nextWeek = todayDate.plus(1, ChronoUnit.WEEKS);
+		System.out.println("Next Week: "+nextWeek);
+		//Next Week: 2018-10-18
+		
+		/*
+		 * Period - between dates
+		 */
+		System.out.println("Period between 2 dates : "+Period.between(nextWeek, todayDate));
+		//Period between 2 dates : P-7D
 		
 		/****************************************************************LocalTime*****************************************************************************************/
 		
 		
 		/*
-		 *  Local date in ISO format (yyyy-MM-dd) without time
+		 *  Local Time 
 		 */
 		
 		LocalTime todayTime = LocalTime.now();
@@ -53,6 +68,18 @@ public class LocalExample {
 		System.out.println("Next time in respective to Current local time: " + todayTime.plusHours(1));
 		//Next time in respective to Current local time: 12:19:48.867
 		
+		/*
+		 * enum ChronoUnit implements TemporalUnit
+		 */
+		LocalTime nextHour = todayTime.plus(1, ChronoUnit.HOURS);
+		System.out.println("Next Hour: "+nextHour);
+		//Next Hour: 12:48:08.828
+		
+		/*
+		 * Duration - between time
+		 */
+		System.out.println("Duration between 2 time : "+Duration.between(nextHour, todayTime));
+		//Duration between 2 time : PT-1H
 		
 		/*****************************************************************LocalDateTime****************************************************************************************/
 		
@@ -77,5 +104,13 @@ public class LocalExample {
 		
 		System.out.println("Next date time in respective to Current local date and time: " + today.plusDays(1));
 		//Next date time in respective to Current local date and time: 2018-10-12T11:09:03.053
+		
+		/*
+		 * enum ChronoUnit implements TemporalUnit
+		 */
+		LocalDateTime nextYear = today.plus(1, ChronoUnit.YEARS);
+		System.out.println("Next Year: "+nextYear);
+		//Next Year: 2019-10-11T11:48:08.832
+		/*****************************************************************LocalDateTime****************************************************************************************/
 	}
 }
