@@ -1,9 +1,9 @@
-package HashcodeEqualsContract;
+package HashcodeEqualsContract.ViolatingequalSymmetryWithInheritance;
 
 public class Employee {
 
-	private Integer employeeId;
-	private String employeeName;
+	public Integer employeeId;
+	public String employeeName;
 
 	public Integer getEmployeeId() {
 		return employeeId;
@@ -41,8 +41,8 @@ public class Employee {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
 		Employee other = (Employee) obj;
 		if (employeeId == null) {
 			if (other.employeeId != null)
@@ -57,16 +57,4 @@ public class Employee {
 		return true;
 	}
 
-	public static void main(String[] args) {
-		Employee e1 = new Employee(101, "Neha");
-		Employee e2 = new Employee(101, "Neha");
-
-		System.out.println("Employee e1 :" + e1 + "\nEmployee e2 : " + e2 + "\nE1==E2 : " + (e1 == e2));
-		System.out.println("Employee e1 :" + e1 + "\nEmployee e2 : " + e2 + "\nE1 equals E2 : " + (e1.equals(e2)));
-		/*
-		 * The default implementation of equals() in the class Object says that equality
-		 * is the same as object identity. And income and expenses are two distinct
-		 * instances.
-		 */
-	}
 }
